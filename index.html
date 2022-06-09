@@ -40,7 +40,6 @@
                 box-sizing: border-box;
             }
             .bgimg1 {
-                width: 100%;
                 height: 100%;
             }
             
@@ -91,6 +90,11 @@
                 cursor: pointer;
                 font-size: 18px;
                 font-family: "Courier New", Courier, monospace;
+                transition-duration: 0.4s;
+            }
+            
+            .faucet_button:hover {
+                background-image: linear-gradient(to bottom right, yellow, red);
             }
             
             @media only screen and (max-width: 768px) {
@@ -100,12 +104,45 @@
               }
              .box-cuard {width: 90%;}
             }
+            
+            #paid_me {
+                position: fixed;
+                top: -2px;
+                right: -60px;
+                width: 100px;
+                background-image: linear-gradient(to bottom right, yellow, red);
+                padding: 15px 50px;
+                -ms-transform: rotate(40deg);
+                transform: rotate(40deg);
+                text-align: center;
+                color: white;
+                font-size: 20px;
+                text-shadow: 1px 1px #000, -1px 1px #000, 1px -1px #000, -1px -1px #000,1px  1px 5px #555;
+                animation: blinking 2s infinite;
+                cursor: pointer;
+            }
+            
+            @keyframes blinking{
+                0%{  color: white; }
+                47%{  color: #ffdebb; }
+                62%{  color: #ffbb73; }
+                97%{  color: #fb9932; }
+                100%{ color: #fb8402;  }
+            }
+            
+            a {
+                display: none;
+                text-decoration: none;
+            }
+            .disclaimer {
+                display: none;
+            }
         </style>
     </head>
     <body id="myCopyright">
         <div class="huks" id="iexp_identy_meta">
             <div class="bgimg1">
-              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2615730058785335" crossorigin="anonymous"></script>
+              <div id="paid_me" onclick="paidNow()"><b>PAID<br>WIDGETS</b></div>
               <div class="middle1">
                 <div class="box-cuard" align="center">
                     <div id="logo-container"></div>
@@ -118,11 +155,13 @@
                     </p>
                 </div>
               </div>
-              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2615730058785335" crossorigin="anonymous"></script>
             </div>
         </div>
         
         <script>
+            function paidNow() {
+                alert("Please contact me person!");
+            }
             function myWidget() {
                 window.open("https://bit.ly/iExperiment");
             }
